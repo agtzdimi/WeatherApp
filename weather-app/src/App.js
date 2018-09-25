@@ -4,6 +4,13 @@ import "./components/NavigationBar";
 import "bootstrap/dist/css/bootstrap.css";
 import NavigationBar from "./components/NavigationBar";
 import { Helmet } from "react-helmet";
+import Weather from "./components/Weather";
+
+var data = [
+  { id: "1:00", value: "4", condition: "cloudy" },
+  { id: "2:00", value: "0", condition: "snowy" },
+  { id: "3:00", value: "-2", condition: "heavy snowy" }
+];
 
 class App extends Component {
   render() {
@@ -17,7 +24,7 @@ class App extends Component {
           </style>
         </Helmet>
         <NavigationBar />
-        <h1>PAOK</h1>
+        <Weather data={data} />
       </div>
     );
   }
