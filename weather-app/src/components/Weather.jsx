@@ -8,6 +8,23 @@ const weatherMap = {
   "3:00": "Temp 2"
 };
 
+const imgPath = "./img/animated/";
+
+function format(cell, row) {
+  switch (cell) {
+    case "Snowy":
+      return '<img src="./img/animated/snowy-4.svg">' + cell;
+    case "Rainy":
+      return '<img src="./img/animated/rainy-4.svg">' + cell;
+    case "Cloudy":
+      return '<img src="./img/animated/cloudy.svg">' + cell;
+    case "Heavy snow":
+      return '<img src="./img/animated/snowy-6.svg">' + cell;
+    default:
+      return '<img src="./img/animated/day.svg">' + cell;
+  }
+}
+
 function isExpandableRow(row) {
   return row["id"] in weatherMap;
 }
@@ -21,35 +38,6 @@ function expandRow(row) {
 }
 
 class Weather extends Component {
-  state = {
-    hours: [
-      { id: "00:00", value: 1, condition: "rainy" },
-      { id: "01:00", value: 1, condition: "rainy" },
-      { id: "02:00", value: 1, condition: "rainy" },
-      { id: "03:00", value: 1, condition: "rainy" },
-      { id: "04:00", value: 1, condition: "rainy" },
-      { id: "05:00", value: 1, condition: "rainy" },
-      { id: "06:00", value: 1, condition: "rainy" },
-      { id: "07:00", value: 1, condition: "rainy" },
-      { id: "08:00", value: 1, condition: "rainy" },
-      { id: "09:00", value: 1, condition: "rainy" },
-      { id: "10:00", value: 1, condition: "rainy" },
-      { id: "11:00", value: 1, condition: "rainy" },
-      { id: "12:00", value: 1, condition: "rainy" },
-      { id: "13:00", value: 1, condition: "rainy" },
-      { id: "14:00", value: 1, condition: "rainy" },
-      { id: "15:00", value: 1, condition: "rainy" },
-      { id: "16:00", value: 1, condition: "rainy" },
-      { id: "17:00", value: 1, condition: "rainy" },
-      { id: "18:00", value: 1, condition: "rainy" },
-      { id: "19:00", value: 1, condition: "rainy" },
-      { id: "20:00", value: 1, condition: "rainy" },
-      { id: "21:00", value: 1, condition: "rainy" },
-      { id: "22:00", value: 1, condition: "rainy" },
-      { id: "23:00", value: 1, condition: "rainy" }
-    ]
-  };
-
   render() {
     const options = {
       expandRowBgColor: "red",
@@ -68,7 +56,9 @@ class Weather extends Component {
             Time
           </TableHeaderColumn>
           <TableHeaderColumn dataField="value">Temperature</TableHeaderColumn>
-          <TableHeaderColumn dataField="condition">State</TableHeaderColumn>
+          <TableHeaderColumn dataField="condition" dataFormat={format}>
+            State
+          </TableHeaderColumn>
         </BootstrapTable>
       </div>
     );

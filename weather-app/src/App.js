@@ -6,10 +6,31 @@ import NavigationBar from "./components/NavigationBar";
 import { Helmet } from "react-helmet";
 import Weather from "./components/Weather";
 
-var data = [
-  { id: "1:00", value: "4", condition: "cloudy" },
-  { id: "2:00", value: "0", condition: "snowy" },
-  { id: "3:00", value: "-2", condition: "heavy snowy" }
+var hours = [
+  { id: "00:00", value: 1, condition: "Rainy" },
+  { id: "01:00", value: 1, condition: "Cloudy" },
+  { id: "02:00", value: 1, condition: "Snowy" },
+  { id: "03:00", value: 1, condition: "Heavy snow" },
+  { id: "04:00", value: 1, condition: "Rainy" },
+  { id: "05:00", value: 1, condition: "Rainy" },
+  { id: "06:00", value: 1, condition: "Rainy" },
+  { id: "07:00", value: 1, condition: "Rainy" },
+  { id: "08:00", value: 1, condition: "Rainy" },
+  { id: "09:00", value: 1, condition: "Rainy" },
+  { id: "10:00", value: 1, condition: "Rainy" },
+  { id: "11:00", value: 1, condition: "Rainy" },
+  { id: "12:00", value: 1, condition: "Rainy" },
+  { id: "13:00", value: 1, condition: "Rainy" },
+  { id: "14:00", value: 1, condition: "Rainy" },
+  { id: "15:00", value: 1, condition: "Rainy" },
+  { id: "16:00", value: 1, condition: "Rainy" },
+  { id: "17:00", value: 1, condition: "Rainy" },
+  { id: "18:00", value: 1, condition: "Rainy" },
+  { id: "19:00", value: 1, condition: "Rainy" },
+  { id: "20:00", value: 1, condition: "Rainy" },
+  { id: "21:00", value: 1, condition: "Rainy" },
+  { id: "22:00", value: 1, condition: "Rainy" },
+  { id: "23:00", value: 1, condition: "Rainy" }
 ];
 
 class App extends Component {
@@ -24,7 +45,7 @@ class App extends Component {
           </style>
         </Helmet>
         <NavigationBar />
-        <Weather data={data} />
+        <Weather data={hours} />
       </div>
     );
   }
