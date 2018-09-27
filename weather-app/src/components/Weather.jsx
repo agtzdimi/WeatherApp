@@ -8,8 +8,6 @@ const weatherMap = {
   "03:00": "PAOKARA"
 };
 
-const imgPath = "./img/animated/";
-
 function format(cell, row) {
   switch (cell) {
     case "Snowy":
@@ -131,12 +129,20 @@ class Weather extends Component {
       expanding: [1] // initially expanded
     };
     return (
-      <div>
+      <div
+        style={{
+          width: "50%",
+          borderRadius: "5px",
+          margin: "0px auto",
+          float: "none"
+        }}
+      >
         <BootstrapTable
+          bordered="false"
+          height="228px"
           data={this.props.data}
           expandableRow={isExpandableRow}
           expandComponent={expandRow}
-          expandColumnOptions={{ expandColumnVisible: true }}
           options={options}
         >
           <TableHeaderColumn isKey dataField="id" dataFormat={clockFormat}>
