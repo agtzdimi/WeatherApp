@@ -8,118 +8,78 @@ const weatherMap = {
   "03:00": "PAOKARA"
 };
 
-function format(cell, row) {
+function conditionFormat(cell, row) {
+  const conditionFormat = "./img/animated/";
   switch (cell) {
     case "Snowy":
-      return '<img src="./img/animated/snowy-4.svg">' + cell;
+      return '<img src="' + conditionFormat + 'snowy-4.svg">' + cell;
     case "Rainy":
-      return '<img src="./img/animated/rainy-4.svg">' + cell;
+      return '<img src="' + conditionFormat + 'rainy-4.svg">' + cell;
     case "Cloudy":
-      return '<img src="./img/animated/cloudy.svg">' + cell;
+      return '<img src="' + conditionFormat + 'cloudy.svg">' + cell;
     case "Heavy snow":
-      return '<img src="./img/animated/snowy-6.svg">' + cell;
+      return '<img src="' + conditionFormat + 'snowy-6.svg">' + cell;
     default:
-      return '<img src="./img/animated/day.svg">' + cell;
+      return '<img src="' + conditionFormat + 'day.svg">' + cell;
   }
 }
 
 function clockFormat(cell, row) {
+  const clockPath = "./img/clock/";
+  const clockFormat = "width=64 height=64>";
+
   switch (cell) {
     case "00:00":
-      return cell + '<img src="./img/clock/0 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "0 o'clock.png\"" + clockFormat;
     case "01:00":
-      return cell + '<img src="./img/clock/1 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "1 o'clock.png\"" + clockFormat;
     case "02:00":
-      return cell + '<img src="./img/clock/2 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "2 o'clock.png\"" + clockFormat;
     case "03:00":
-      return cell + '<img src="./img/clock/3 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "3 o'clock.png\"" + clockFormat;
     case "04:00":
-      return cell + '<img src="./img/clock/4 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "4 o'clock.png\"" + clockFormat;
     case "05:00":
-      return cell + '<img src="./img/clock/5 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "5 o'clock.png\"" + clockFormat;
     case "06:00":
-      return cell + '<img src="./img/clock/6 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "6 o'clock.png\"" + clockFormat;
     case "07:00":
-      return cell + '<img src="./img/clock/7 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "7 o'clock.png\"" + clockFormat;
     case "08:00":
-      return cell + '<img src="./img/clock/8 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "8 o'clock.png\"" + clockFormat;
     case "09:00":
-      return cell + '<img src="./img/clock/9 o\'clock.png" width=64 height=64>';
+      return cell + '<img src="' + clockPath + "9 o'clock.png\"" + clockFormat;
     case "10:00":
-      return (
-        cell + '<img src="./img/clock/10 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "10 o'clock.png\"" + clockFormat;
     case "11:00":
-      return (
-        cell + '<img src="./img/clock/11 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "11 o'clock.png\"" + clockFormat;
     case "12:00":
-      return (
-        cell + '<img src="./img/clock/12 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "12 o'clock.png\"" + clockFormat;
     case "13:00":
-      return (
-        cell + '<img src="./img/clock/13 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "13 o'clock.png\"" + clockFormat;
     case "14:00":
-      return (
-        cell + '<img src="./img/clock/14 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "14 o'clock.png\"" + clockFormat;
     case "15:00":
-      return (
-        cell + '<img src="./img/clock/15 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "15 o'clock.png\"" + clockFormat;
     case "16:00":
-      return (
-        cell + '<img src="./img/clock/16 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "16 o'clock.png\"" + clockFormat;
     case "17:00":
-      return (
-        cell + '<img src="./img/clock/17 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "17 o'clock.png\"" + clockFormat;
     case "18:00":
-      return (
-        cell + '<img src="./img/clock/18 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "18 o'clock.png\"" + clockFormat;
     case "19:00":
-      return (
-        cell + '<img src="./img/clock/19 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "19 o'clock.png\"" + clockFormat;
     case "20:00":
-      return (
-        cell + '<img src="./img/clock/20 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "20 o'clock.png\"" + clockFormat;
     case "21:00":
-      return (
-        cell + '<img src="./img/clock/21 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "21 o'clock.png\"" + clockFormat;
     case "22:00":
-      return (
-        cell + '<img src="./img/clock/22 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "22 o'clock.png\"" + clockFormat;
     case "23:00":
-      return (
-        cell + '<img src="./img/clock/23 o\'clock.png" width=64 height=64>'
-      );
+      return cell + '<img src="' + clockPath + "23 o'clock.png\"" + clockFormat;
     default:
       return cell;
   }
-}
-
-function celciusFormat(cell, row) {
-  return cell + "°C";
-}
-
-function isExpandableRow(row) {
-  return row["id"] in weatherMap;
-}
-
-function expandRow(row) {
-  return (
-    <p>
-      {row["id"]} {weatherMap[row["id"]]}.
-    </p>
-  );
 }
 
 class Weather extends Component {
@@ -141,15 +101,22 @@ class Weather extends Component {
           bordered="false"
           height="228px"
           data={this.props.data}
-          expandableRow={isExpandableRow}
-          expandComponent={expandRow}
+          expandableRow={row => row["id"] in weatherMap}
+          expandComponent={row => (
+            <p>
+              {row["id"]} {weatherMap[row["id"]]}
+            </p>
+          )}
           options={options}
         >
           <TableHeaderColumn isKey dataField="id" dataFormat={clockFormat}>
             Thursday 27 of September
           </TableHeaderColumn>
-          <TableHeaderColumn dataField="value" dataFormat={celciusFormat} />
-          <TableHeaderColumn dataField="condition" dataFormat={format}>
+          <TableHeaderColumn
+            dataField="value"
+            dataFormat={(cell, row) => cell + "°C"}
+          />
+          <TableHeaderColumn dataField="condition" dataFormat={conditionFormat}>
             Dawn: 07:22 - Rise 19:12
           </TableHeaderColumn>
         </BootstrapTable>
