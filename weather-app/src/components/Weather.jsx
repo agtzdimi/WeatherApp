@@ -3,11 +3,6 @@ import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import "../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css";
 import "../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 
-const weatherMap = {
-  "01:00": "PAOK",
-  "03:00": "PAOKARA"
-};
-
 function conditionFormat(cell, row) {
   const conditionFormat = "./img/animated/";
   switch (cell) {
@@ -85,8 +80,7 @@ function clockFormat(cell, row) {
 class Weather extends Component {
   render() {
     const options = {
-      expandRowBgColor: "red",
-      expanding: [1] // initially expanded
+      onRowClick: row => this.props.onExpand(row["id"])
     };
     return (
       <div
@@ -101,13 +95,8 @@ class Weather extends Component {
           bordered="false"
           height="228px"
           data={this.props.data}
-          expandableRow={row => row["id"] in weatherMap}
-          expandComponent={row => (
-            <p>
-              {row["id"]} {weatherMap[row["id"]]}
-            </p>
-          )}
           options={options}
+          ref="table"
         >
           <TableHeaderColumn isKey dataField="id" dataFormat={clockFormat}>
             Thursday 27 of September
