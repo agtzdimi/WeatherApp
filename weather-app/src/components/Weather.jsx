@@ -93,7 +93,7 @@ class Weather extends Component {
       >
         <BootstrapTable
           bordered="false"
-          height="228px"
+          height="800px"
           data={this.props.data}
           options={options}
           ref="table"

@@ -8,6 +8,8 @@ import Weather from "./components/Weather";
 
 class App extends Component {
   state = {
+    isExpanded: [],
+
     visibleHours: [
       { id: "08:00", value: 1, condition: "Rainy" },
       { id: "14:00", value: 1, condition: "Rainy" },
@@ -48,40 +50,43 @@ class App extends Component {
     ]
   };
 
+  initialHours = [...this.state.visibleHours];
+
   handleExpand = timeId => {
-    let visibleHours = this.state.visibleHours;
+    let initialHours = [...this.initialHours];
+    if (initialHours.filter(time => time.id !== timeId).length == 4) {
+      return null;
+    }
+    let visibleHours = [...this.state.visibleHours];
+    const index = visibleHours.findIndex(ind => ind.id === timeId);
+    if (this.state.isExpanded.includes(timeId)) {
+      const isExpandedIndex = this.state.isExpanded.findIndex(
+        ind => ind === timeId
+      );
+      for (let i = 0; i < 5; i++) {
+        visibleHours.splice(index + 1, 1);
+      }
+      this.setState({ visibleHours });
+      this.state.isExpanded.splice(isExpandedIndex, 1);
+      return null;
+    }
+    this.state.isExpanded.push(timeId);
     switch (timeId) {
       case "02:00":
-        visibleHours = this.state.visibleHours.splice(
-          4,
-          0,
-          ...this.state.midnightHours
-        );
-        this.setState({ visibleHours: this.state.visibleHours });
+        visibleHours.splice(index + 1, 0, ...this.state.midnightHours);
+        this.setState({ visibleHours });
         break;
       case "08:00":
-        visibleHours = this.state.visibleHours.splice(
-          1,
-          0,
-          ...this.state.morningHours
-        );
-        this.setState({ visibleHours: this.state.visibleHours });
+        visibleHours.splice(index + 1, 0, ...this.state.morningHours);
+        this.setState({ visibleHours });
         break;
       case "14:00":
-        visibleHours = this.state.visibleHours.splice(
-          2,
-          0,
-          ...this.state.nounHours
-        );
-        this.setState({ visibleHours: this.state.visibleHours });
+        visibleHours.splice(index + 1, 0, ...this.state.nounHours);
+        this.setState({ visibleHours });
         break;
       case "20:00":
-        visibleHours = this.state.visibleHours.splice(
-          3,
-          0,
-          ...this.state.afternoonHours
-        );
-        this.setState({ visibleHours: this.state.visibleHours });
+        visibleHours.splice(index + 1, 0, ...this.state.afternoonHours);
+        this.setState({ visibleHours });
         break;
       default:
         break;
