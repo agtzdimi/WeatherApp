@@ -126,6 +126,10 @@ class Weather extends Component {
     }
   };
 
+  expandFormat = cell => {
+    return <img src={cell} width="10" height="10" />;
+  };
+
   getDateWithSuffix = number => {
     let monthSuffixNumber = number % 10;
     switch (monthSuffixNumber) {
@@ -194,6 +198,11 @@ class Weather extends Component {
           options={options}
           ref="table"
         >
+          <TableHeaderColumn
+            dataField="img"
+            dataFormat={this.expandFormat}
+            width="5%"
+          />
           <TableHeaderColumn isKey dataField="id" dataFormat={this.clockFormat}>
             {this.getSystemDate()}
           </TableHeaderColumn>

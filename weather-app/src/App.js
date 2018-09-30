@@ -11,42 +11,162 @@ class App extends Component {
     isExpanded: [],
 
     visibleHours: [
-      { id: "08:00", value: 1, condition: "Rainy" },
-      { id: "14:00", value: 1, condition: "Rainy" },
-      { id: "20:00", value: 1, condition: "Rainy" },
-      { id: "02:00", value: 1, condition: "Snowy" }
+      {
+        img: "./img/static/expand.svg",
+        id: "08:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expand.svg",
+        id: "14:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expand.svg",
+        id: "20:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expand.svg",
+        id: "02:00",
+        value: 1,
+        condition: "Snowy"
+      }
     ],
 
     midnightHours: [
-      { id: "03:00", value: 1, condition: "Heavy snow" },
-      { id: "04:00", value: 1, condition: "Rainy" },
-      { id: "05:00", value: 1, condition: "Rainy" },
-      { id: "06:00", value: 1, condition: "Rainy" },
-      { id: "07:00", value: 1, condition: "Rainy" }
+      {
+        img: "./img/static/expanded.png",
+        id: "03:00",
+        value: 1,
+        condition: "Heavy snow"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "04:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "05:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "06:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "07:00",
+        value: 1,
+        condition: "Rainy"
+      }
     ],
 
     morningHours: [
-      { id: "09:00", value: 1, condition: "Rainy" },
-      { id: "10:00", value: 1, condition: "Rainy" },
-      { id: "11:00", value: 1, condition: "Rainy" },
-      { id: "12:00", value: 1, condition: "Rainy" },
-      { id: "13:00", value: 1, condition: "Rainy" }
+      {
+        img: "./img/static/expanded.png",
+        id: "09:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "10:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "11:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "12:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "13:00",
+        value: 1,
+        condition: "Rainy"
+      }
     ],
 
     nounHours: [
-      { id: "15:00", value: 1, condition: "Rainy" },
-      { id: "16:00", value: 1, condition: "Rainy" },
-      { id: "17:00", value: 1, condition: "Rainy" },
-      { id: "18:00", value: 1, condition: "Rainy" },
-      { id: "19:00", value: 1, condition: "Rainy" }
+      {
+        img: "./img/static/expanded.png",
+        id: "15:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "16:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "17:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "18:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "19:00",
+        value: 1,
+        condition: "Rainy"
+      }
     ],
 
     afternoonHours: [
-      { id: "21:00", value: 1, condition: "Rainy" },
-      { id: "22:00", value: 1, condition: "Rainy" },
-      { id: "23:00", value: 1, condition: "Rainy" },
-      { id: "00:00", value: 1, condition: "Rainy" },
-      { id: "01:00", value: 1, condition: "Cloudy" }
+      {
+        img: "./img/static/expanded.png",
+        id: "21:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "22:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "23:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "00:00",
+        value: 1,
+        condition: "Rainy"
+      },
+      {
+        img: "./img/static/expanded.png",
+        id: "01:00",
+        value: 1,
+        condition: "Cloudy"
+      }
     ]
   };
 
