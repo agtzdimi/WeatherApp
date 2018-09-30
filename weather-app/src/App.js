@@ -54,7 +54,7 @@ class App extends Component {
 
   handleExpand = timeId => {
     let initialHours = [...this.initialHours];
-    if (initialHours.filter(time => time.id !== timeId).length == 4) {
+    if (initialHours.filter(time => time.id !== timeId).length === 4) {
       return null;
     }
     let visibleHours = [...this.state.visibleHours];

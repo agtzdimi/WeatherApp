@@ -78,6 +78,53 @@ function clockFormat(cell, row) {
 }
 
 class Weather extends Component {
+  getDateWithSuffix = number => {
+    let monthSuffixNumber = number % 10;
+    switch (monthSuffixNumber) {
+      case 1:
+        return number + "st";
+      case 2:
+        return number + "nd";
+      case 3:
+        return number + "rd";
+      default:
+        return number + "th";
+    }
+  };
+
+  getSystemDate = () => {
+    let today = new Date();
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ];
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+    return (
+      days[today.getDay()] +
+      " " +
+      this.getDateWithSuffix(today.getDate()) +
+      " of " +
+      months[today.getMonth()]
+    );
+  };
   render() {
     const options = {
       onRowClick: row => this.props.onExpand(row["id"])
@@ -99,7 +146,7 @@ class Weather extends Component {
           ref="table"
         >
           <TableHeaderColumn isKey dataField="id" dataFormat={clockFormat}>
-            Thursday 27 of September
+            {this.getSystemDate()}
           </TableHeaderColumn>
           <TableHeaderColumn
             dataField="value"
